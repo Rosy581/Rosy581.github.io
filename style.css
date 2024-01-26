@@ -6,6 +6,7 @@ body{
     color: #c4c4c4
 }
 #title{
+    size-adjust: auto;
     text-align: center;
     color: #c4c4c4;
     text-shadow: 1px 1px 1px #c4c4c4;
