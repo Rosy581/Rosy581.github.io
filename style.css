@@ -19,13 +19,6 @@ body {
     text-indent: 25px;
 }
 
-#Nav_bar li {
-    display: inline-block; 
-}
-li a:hover {
-    background-color: #3D424E;
-} 
-
 #Nav_bar ul {
     list-style-type: none;
     margin: 0;
@@ -33,10 +26,29 @@ li a:hover {
     overflow: hidden;
     background-color: #0D1B2A;
 }
-#Nav_bar li a {
+
+li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 16px 14px 16px;
     text-decoration: none;
+}
+
+li a:hover {
+    background-color: #3D424E;
+}
+
+#Nav_bar li:first-child a {
+    padding: 0;
+}
+
+#Nav_bar li:first-child img {
+    margin: 0;
 }
