@@ -1,7 +1,12 @@
+head{
+    background-color: #0D1B2A
+}
 body{
-    background-color: 0d1b2a;
+    background-color: #1B263B;
+    color: #c4c4c4
 }
 #title{
     text-align: center;
-    color:e0e1dd;
+    color: #c4c4c4;
+    text-shadow: 1px 1px 1px #c4c4c4;
 }
