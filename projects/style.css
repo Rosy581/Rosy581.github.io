@@ -1,18 +1,17 @@
 body {
     background-color: #1B263B;
     color: #c4c4c4;
+    text-indent: 25px;
     font-size: large;
     font-family: "LucyRounded";
     font-weight: normal;
     font-style: normal;
 }
-#intro{
-    text-indent: 25px;
-}
+
 html,
 head {
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 #title {
