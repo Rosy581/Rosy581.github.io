@@ -15,20 +15,24 @@
     let sAudioYes = ["https://wiki.teamfortress.com/w/images/5/5d/Soldier_yes02.wav","https://wiki.teamfortress.com/w/images/0/02/Soldier_yes03.wav","https://wiki.teamfortress.com/w/images/6/6e/Soldier_yes04.wav",]
     let sAudioNo = ["https://wiki.teamfortress.com/w/images/7/7e/Soldier_no01.wav","https://wiki.teamfortress.com/w/images/0/08/Soldier_no02.wav","https://wiki.teamfortress.com/w/images/5/58/Soldier_no03.wav"]
     let test =":3"
-    const yesD = ()=>{
+    const yesD = async()=>{
         test = new Audio(dAudioYes[Math.round(Math.random()*2)])
+        setTimeOut((),100)
         test.play()
     }
-    const noD = ()=>{
+    const noD = async()=>{
         test = new Audio(dAudioNo[Math.round(Math.random()*2)])
+        setTimeOut((),100)
         test.play()
     }
-    const yesS = ()=>{
+    const yesS = async()=>{
         test = new Audio(sAudioYes[Math.round(Math.random()*2)])
+        setTimeOut((),100)
         test.play()
     }
-    const noS = () =>{
+    const noS = async() =>{
         test = new Audio(sAudioNo[Math.round(Math.random()*2)])
+        setTimeOut((),100)
         test.play()
     }
     let prisonProb = (st1, st2) => {
@@ -46,21 +50,21 @@
         if (op1 && op2) {
             score1 += 3
             score2 += 3
-            yesD()
-            yesS()
+            await yesD()
+            await yesS()
         } else if (!op1 && op2) {
             score1 += 5
-            noD()
-            yesS()
+            await noD()
+            await yesS()
         } else if (op1 && !op2) {
             score2 += 5
-            yesD()
-            noS()
+            await yesD()
+            await noS()
         } else if (!op1 && !op2) {
             score1++
             score2++
-            noS()
-            noD()
+            await noS()
+            await noD()
         }
     }
     console.log(st1.name, ":", score1)
