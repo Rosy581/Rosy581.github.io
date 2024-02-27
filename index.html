@@ -17,7 +17,7 @@
     let test =":3"
     const yesD = async()=>{
         test = new Audio(dAudioYes[Math.round(Math.random()*2)])
-        setTimeOut((),100)
+        setTimeOut(()=>{},100)
         test.play()
     }
     const noD = async()=>{
@@ -27,12 +27,12 @@
     }
     const yesS = async()=>{
         test = new Audio(sAudioYes[Math.round(Math.random()*2)])
-        setTimeOut((),100)
+        setTimeOut(()=>{},100)
         test.play()
     }
     const noS = async() =>{
         test = new Audio(sAudioNo[Math.round(Math.random()*2)])
-        setTimeOut((),100)
+        setTimeOut(()=>{},100)
         test.play()
     }
     let prisonProb = (st1, st2) => {
