@@ -16,19 +16,19 @@
     let sAudioYes = ["https://wiki.teamfortress.com/w/images/f/fa/Solider_yes01","https://wiki.teamfortress.com/w/images/f/fa/Solider_yes02","https://wiki.teamfortress.com/w/images/f/fa/Solider_yes03"]
     let test =":3"
     const yesD = ()=>{
-        test = new Audio("audio/",dAudioYes[Math.round(Math.random()*2)])
+        test = new Audio(dAudioYes[Math.round(Math.random()*2)])
         test.play()
     }
     const noD = ()=>{
-        test = new Audio("audio/",dAudioNo[Math.round(Math.random()*2)])
+        test = new Audio(dAudioNo[Math.round(Math.random()*2)])
         test.play()
     }
     const yesS = ()=>{
-        test = new Audio("audio/",sAudioYes[Math.round(Math.random()*2)])
+        test = new Audio(sAudioYes[Math.round(Math.random()*2)])
         test.play()
     }
     const noS = () =>{
-        test = new Audio("audio/",sAudioNo[Math.round(Math.random()*2)])
+        test = new Audio(sAudioNo[Math.round(Math.random()*2)])
         test.play()
     }
     let prisonProb = (st1, st2) => {
