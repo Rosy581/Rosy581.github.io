@@ -10,7 +10,134 @@
         <li><a href="/projects/index.html">Projects</a></li>
     </ul>
 </div>
+<script>    let dAudioYes = ["Demoman_yes01","Demoman_yes02","Demoman_yes03",]
+    let dAudioNo = ["Demoman_no01.wav","Demoman_no02.wav","Demoman_03.wav",]
+    let sAudioNo = ["Solider_no01","Solider_no02","Solider_no03",]
+    let sAudioYes = ["Solider_yes01","Solider_yes02","Solider_yes03"]
+    let test =":3"
+    const yesD = ()=>{
+        test = new Audio("audio/",dAudioYes[Math.round(Math.random()*2)])
+        test.play()
+    }
+    const noD = ()=>{
+        test = new Audio("audio/",dAudioNo[Math.round(Math.random()*2)])
+        test.play()
+    }
+    const yesS = ()=>{
+        test = new Audio("audio/",sAudioYes[Math.round(Math.random()*2)])
+        test.play()
+    }
+    const noS = () =>{
+        test = new Audio("audio/",sAudioNo[Math.round(Math.random()*2)])
+        test.play()
+    }
+    let prisonProb = (st1, st2) => {
+    let log1 = []
+    let log2 = []
+    let score1 = 0
+    let score2 = 0
+    let op1;
+    let op2
+    for (let i = 0; i < 200; i++) {
+        log1.push(op1)
+        log2.push(op2)
+        op1 = st1.op(op2)
+        op2 = st2.op(op1)
+        if (op1 && op2) {
+            score1 += 3
+            score2 += 3
+            yesD()
+            yesS()
+        } else if (!op1 && op2) {
+            score1 += 5
+            noD()
+            yesS()
+        } else if (op1 && !op2) {
+            score2 += 5
+            yesD()
+            noS()
+        } else if (!op1 && !op2) {
+            score1++
+            score2++
+            noS()
+            noD()
+        }
+    }
+    console.log(st1.name, ":", score1)
+    console.log(st2.name, ":", score2)
+    }
 
+    let tft2 = {
+    log: {
+        f: true,
+        s: true
+    },
+    op: (last) => {
+        log = tft2.log
+        log.s = tft2.log.f
+        log.f = last
+        if (log.f == false, log.s == false) {
+            return false
+        } else {
+            return true
+        }
+    },
+    name: "TitForTwoTat"
+    }
+    let bad = {
+    op: () => { return false },
+    name: "Bad"
+    }
+    let good = {
+    op: () => { return true },
+    name: "Good"
+    }
+    let tft = {
+    op: (last) => {
+        if (last == undefined) {
+            return true
+        } else if (!last) {
+            return false
+        } else {
+            return true
+        }
+    },
+    name: "TitForTat"
+    }
+    let joss = {
+    op: () => {
+        return Math.round(Math.random() * 9) == 0 ? false : true
+    },
+    name: "Joss"
+    }
+    let mirror = {
+    op: (last) => {
+        return last
+    },
+    name: "Mirror"
+    }
+    let opposite = {
+    op: (last) => { return !last },
+    name: "Opposite"
+    }
+    let veryBad = {
+    coop:0,
+    op: (last) => {
+        veryBad.coop += last
+        prob = coop / log1.length
+        if (log1.length < 3) {
+            return true
+        } else if (prob > .5) {
+            return true
+        } else if (prob < .5){
+            return false
+        } else {
+            return last
+        }
+    },
+    name:"VeryBad"
+    }  
+</script>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -18,7 +145,7 @@
     <title>Rosy's cite</title>
     <h1 id="title">Rosy's based cite</h1>
 </head>
-
+<button onclick="prisonProb(good,joss)"></button>
 <body>
     <div id="intro">
         Hi you may know me by many different names Rosy, Rosy581,
