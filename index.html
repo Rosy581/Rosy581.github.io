@@ -10,138 +10,6 @@
         <li><a href="/projects/index.html">Projects</a></li>
     </ul>
 </div>
-<script>    let dAudioYes = ["https://wiki.teamfortress.com/w/images/f/fa/Demoman_yes01","https://wiki.teamfortress.com/w/images/5/59/Demoman_yes02.wav","https://wiki.teamfortress.com/w/images/1/1f/Demoman_yes03.wav",]
-    let dAudioNo = ["https://wiki.teamfortress.com/w/images/f/fa/Demoman_no01.wav","https://wiki.teamfortress.com/w/images/b/b1/Demoman_no02.wav","https://wiki.teamfortress.com/w/images/8/8c/Demoman_no03.wav",]
-    let sAudioYes = ["https://wiki.teamfortress.com/w/images/5/5d/Soldier_yes02.wav","https://wiki.teamfortress.com/w/images/0/02/Soldier_yes03.wav","https://wiki.teamfortress.com/w/images/6/6e/Soldier_yes04.wav",]
-    let sAudioNo = ["https://wiki.teamfortress.com/w/images/7/7e/Soldier_no01.wav","https://wiki.teamfortress.com/w/images/0/08/Soldier_no02.wav","https://wiki.teamfortress.com/w/images/5/58/Soldier_no03.wav"]
-    let test =":3"
-    const yesD = async()=>{
-        test = new Audio(dAudioYes[Math.round(Math.random()*2)])
-        setTimeOut(()=>{},100)
-        test.play()
-    }
-    const noD = async()=>{
-        test = new Audio(dAudioNo[Math.round(Math.random()*2)])
-        setTimeOut((),100)
-        test.play()
-    }
-    const yesS = async()=>{
-        test = new Audio(sAudioYes[Math.round(Math.random()*2)])
-        setTimeOut(()=>{},100)
-        test.play()
-    }
-    const noS = async() =>{
-        test = new Audio(sAudioNo[Math.round(Math.random()*2)])
-        setTimeOut(()=>{},100)
-        test.play()
-    }
-    const prisonProb = (st1, st2) => {
-    let log1 = []
-    let log2 = []
-    let score1 = 0
-    let score2 = 0
-    let op1;
-    let op2
-    for (let i = 0; i < 200; i++) {
-        log1.push(op1)
-        log2.push(op2)
-        op1 = st1.op(op2)
-        op2 = st2.op(op1)
-        if (op1 && op2) {
-            score1 += 3
-            score2 += 3
-            await yesD()
-            await yesS()
-        } else if (!op1 && op2) {
-            score1 += 5
-            await noD()
-            await yesS()
-        } else if (op1 && !op2) {
-            score2 += 5
-            await yesD()
-            await noS()
-        } else if (!op1 && !op2) {
-            score1++
-            score2++
-            await noS()
-            await noD()
-        }
-    }
-    console.log(st1.name, ":", score1)
-    console.log(st2.name, ":", score2)
-    }
-
-    let tft2 = {
-    log: {
-        f: true,
-        s: true
-    },
-    op: (last) => {
-        log = tft2.log
-        log.s = tft2.log.f
-        log.f = last
-        if (log.f == false, log.s == false) {
-            return false
-        } else {
-            return true
-        }
-    },
-    name: "TitForTwoTat"
-    }
-    let bad = {
-    op: () => { return false },
-    name: "Bad"
-    }
-    let good = {
-    op: () => { return true },
-    name: "Good"
-    }
-    let tft = {
-    op: (last) => {
-        if (last == undefined) {
-            return true
-        } else if (!last) {
-            return false
-        } else {
-            return true
-        }
-    },
-    name: "TitForTat"
-    }
-    let joss = {
-    op: () => {
-        return Math.round(Math.random() * 9) == 0 ? false : true
-    },
-    name: "Joss"
-    }
-    let mirror = {
-    op: (last) => {
-        return last
-    },
-    name: "Mirror"
-    }
-    let opposite = {
-    op: (last) => { return !last },
-    name: "Opposite"
-    }
-    let veryBad = {
-    coop:0,
-    op: (last) => {
-        veryBad.coop += last
-        prob = coop / log1.length
-        if (log1.length < 3) {
-            return true
-        } else if (prob > .5) {
-            return true
-        } else if (prob < .5){
-            return false
-        } else {
-            return last
-        }
-    },
-    name:"VeryBad"
-    }  
-</script>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -149,7 +17,7 @@
     <title>Rosy's cite</title>
     <h1 id="title">Rosy's based cite</h1>
 </head>
-<button onclick="prisonProb(good,joss)"></button>
+
 <body>
     <div id="intro">
         Hi you may know me by many different names Rosy, Rosy581,
