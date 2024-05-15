@@ -58,3 +58,6 @@ li a:hover {
 #Nav_bar li:first-child img {
     margin: 0;
 }
+#err{
+    text-size-adjust: 250;
+}
