@@ -8,12 +8,6 @@ body {
     font-style: normal;
 }
 
-html,
-head {
-    margin: 0;
-    padding: 0;
-}
-
 #title {
     size-adjust: 69%;
     text-align: center;
@@ -23,6 +17,7 @@ head {
 
 #intro {
     text-indent: 25px;
+    text-align: center;
 }
 
 #Nav_bar ul {
@@ -33,13 +28,19 @@ head {
     background-color: #0D1B2A;
 }
 
-#Nav_bar li {
+html,
+head {
+    margin: 0;
+    padding: 0
+}
+
+li {
     display: inline-block;
     margin: 0;
     padding: 0;
 }
 
-#Nav_bar li a {
+li a {
     display: block;
     color: white;
     text-align: center;
@@ -47,34 +48,29 @@ head {
     text-decoration: none;
 }
 
-#Nav_bar li a:hover {
+li a:hover {
     background-color: #3D424E;
 }
 
-#proj_1{
-    background-color: #415A77;
-    border-radius: 15px;
-    display: inline-block;
-    width: 40%;
-    height: 20%;
-    padding: 5px
+#Nav_bar li:first-child a {
+    padding: 0;
+}
+a:link{
+    color:#00ffff;
+}
+a:hover{
+    color:#b1d9ff;
+}
+a:visited, a:active{
+    color:#000fff;
 }
 
-#proj_2{
-    background-color: #415A77;
-    border-radius: 15px;
-    display: inline-block;
-    width: 40%;
-    height: 20%;
-    padding: 5px;
+#Nav_bar li:first-child img {
+    margin: auto;
 }
-
-#header-container {
-    display: flex;
-    align-items: center;
-    padding: 10%;
-    justify-content: center;
+.err{
+    text-align: center;
 }
-h2{
-    margin-right: 10px
+.err h1{
+    font-size: 100px;
 }
