@@ -43,7 +43,7 @@ head {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px 14px 16px;
+    padding: 14px 16px 14px 10px;
     text-decoration: none;
 }
 
@@ -54,10 +54,9 @@ head {
 #Nav_bar li:first-child a {
     padding: 0;
 }
-
-#Nav_bar img {
+#Nav_bar a img{
     margin: 0;
-    display:inline;
+    vertical-align: middle;
 }
 #err{
     text-size-adjust: 250;
