@@ -33,13 +33,13 @@ head {
     padding: 0
 }
 
-li {
+#Nav_bar li {
     display: inline-block;
     margin: 0;
     padding: 0;
 }
 
-li a {
+#Nav_bar li a {
     display: block;
     color: white;
     text-align: center;
@@ -47,16 +47,17 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #3D424E;
+#Nav_bar li a:hover {
+    background-color: #2c3549;
 }
 
 #Nav_bar li:first-child a {
     padding: 0;
 }
 
-#Nav_bar li:first-child img {
+#Nav_bar img {
     margin: 0;
+    display:inline;
 }
 #err{
     text-size-adjust: 250;
